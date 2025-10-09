@@ -1,0 +1,37 @@
+name: Nix Hour Topic Request
+description: Suggest a Nix-related topic to cover in an upcoming session
+title: '[Topic] '
+labels: ['nix-hour', 'topic-request']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a topic for Nix Hour! Please fill in the details below.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What’s your question or topic?
+      description: Give a clear and concise description of what you want to learn or discuss.
+      placeholder: "I'd like to learn how to build minimal containers with Nix..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Why is this important or interesting?
+      description: Help us understand why this topic is useful for you or others.
+      placeholder: 'This would help me avoid using Dockerfiles...'
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: prior-knowledge
+    attributes:
+      label: What do you already know?
+      description: Give us a sense of your current understanding.
+      options:
+        - label: I’m totally new to this topic
+        - label: I’ve tried it before but got stuck
+        - label: I have some experience but want deeper understanding
