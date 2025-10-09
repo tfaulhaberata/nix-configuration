@@ -1,5 +1,5 @@
 {
-  description = "Nix Hour at ATA-LLC: Learning Nix with Flakes";
+  description = "Tyler: Learning Nix with Flakes";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/release-25.05";
@@ -7,6 +7,8 @@
     snowfall-lib.url = "github:snowfallorg/lib";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
     unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs: let
@@ -14,10 +16,10 @@
       inherit inputs;
       src = ./.;
       snowfall = {
-        namespace = "nh";
+        namespace = "tmf";
         meta = {
-          name = "nix-hour";
-          title = "Nix Hour";
+          name = "Learning";
+          title = "Nix-learning";
         };
       };
     };
@@ -26,5 +28,8 @@
       channels-config = {
         allowUnfree = true;
       };
+      systems.modules.nixos = with inputs; [
+      home-manager.nixosModules.home-manager
+     ];
     };
 }

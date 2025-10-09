@@ -8,6 +8,9 @@ with lib.tmf; {
       email = "tylerfaulhaber@gmail.com";
       uid = 10000;
     };
+    cli.zsh = {
+      enable = true;
+    };
   };
 
   home.stateVersion = "23.05";

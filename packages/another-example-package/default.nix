@@ -3,7 +3,7 @@
   pkgs,
   ...
 }:
-lib.nh.exampleFunc {
+lib.tmf.exampleFunc {
   inherit pkgs;
   text = "Hello World!";
 }

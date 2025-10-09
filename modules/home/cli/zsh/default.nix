@@ -37,14 +37,7 @@ in {
         theme = "fino";
         plugins = ["fzf"];
       };
-    # # TODO: Move the aliases.shrc into a nix file so if programs are called in there they are for sure installed and have the correct path
-    # home.file = {
-    #   ".config/shell/zsh/fino.zsh-theme".source = ./fino-theme/fino.zsh-theme;
-    #   ".config/shell/zsh/git.zsh".source = ./fino-theme/git.zsh;
-    #   ".config/shell/zsh/prompt_info_functions.zsh".source =
-    #     ./fino-theme/prompt_info_functions.zsh;
-    #   ".config/shell/zsh/spectrum.zsh".source = ./fino-theme/spectrum.zsh;
-    # };
+    };
   };
 }
 
