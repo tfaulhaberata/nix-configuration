@@ -11,8 +11,14 @@ with lib.tmf; {
     cli.zsh = {
       enable = true;
     };
+    cli.misc = {
+      enable = true;
+    };
+    neovim = {
+      enable = true;
+    };
+
   };
 
   home.stateVersion = "23.05";
 }
- 
