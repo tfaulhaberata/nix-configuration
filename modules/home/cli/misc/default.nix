@@ -9,11 +9,16 @@
   cfg = config.tmf.cli.misc;
 
 in {
-  options.tmf.cli.zsh = {
+  options.tmf.cli.misc = {
     enable = mkEnableOption "MISC";
   };
 
   config = mkIf cfg.enable {
+    programs.git = {
+      enable = true;
+      userName = "tiefaul";
+      userEmail = "tylerfaulhaber@gmail.com";
+    };
     home.packages = [
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
@@ -31,6 +36,7 @@ in {
       pkgs.lazygit
       pkgs.go
       pkgs.btop
+      pkgs.git
       # # You can also create simple shell scripts directly inside your
       # # configuration. For example, this adds a command 'my-hello' to your
       # # environment:

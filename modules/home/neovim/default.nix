@@ -7,15 +7,17 @@
 }: let
   inherit (lib) mkEnableOption mkIf;
 
-  cfg = config.tmf.neovim.nvim;
+  cfg = config.tmf.neovim;
 
 in {
-  options.tmf.neovim.nvim = {
+  options.tmf.neovim = {
     enable = mkEnableOption "NVIM";
   };
 
   config = mkIf cfg.enable {
-    ".config/nvim".source = ./nvim-config/.;
+    home.file = {
+      ".config/nvim".source = ./nvim-config/.;
+    };
     programs.neovim = {
       enable = true;
     };
